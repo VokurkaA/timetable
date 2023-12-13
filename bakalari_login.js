@@ -179,7 +179,7 @@ async function verifyLogin(schoolUrl, username, password) {
     async function getToken() {
         try {
             var url = schoolUrl + 'api/login';
-            
+
             const body = new URLSearchParams();
             body.append('client_id', 'ANDR');
             body.append('grant_type', 'password');
@@ -217,35 +217,40 @@ function confirmLogin(userData, username, password, schoolUrl) {
     if (userData.UserUID == undefined)
         isSuccessfull = false;
 
-        console.log(userData);
-        console.log(isSuccessfull);
-        console.log(userData.UserUID);
-
-    try{
-        if  (userData.UserUID == null)
+    try {
+        if (userData.UserUID == null)
             throw new console.error();
 
         var text1 = document.createElement('p');
         text1.textContent = "Is this you?";
-        text1.style.textAlign = 'left'
+        text1.style.textAlign = 'left';
+        text1.style.marginTop = '3vw';
         text1.style.paddingLeft = '2vw';
         text1.style.color = '#000000';
         loginForm.appendChild(text1);
-
-        var studyType = document.createElement('p');
-        studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
-        loginForm.appendChild(studyType);
 
         var name = document.createElement('p');
         name.textContent = userData.FullUserName;
         loginForm.appendChild(name);
 
+        var studyType = document.createElement('p');
+        studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
+        loginForm.appendChild(studyType);
+
         var cookieLbl = document.createElement('label');
-        cookieLbl.textContent = 'I agree to usage of cookies';
+        cookieLbl.textContent = 'I agree to usage of ';
         loginForm.appendChild(cookieLbl);
+
+        var cookiesLink = document.createElement('a');
+        cookiesLink.href = 'clarification.html';
+        cookiesLink.textContent = 'cookies';
+        cookiesLink.target = '_blank';
+        cookieLbl.appendChild(cookiesLink);
+
 
         var cookieCheck = document.createElement('input');
         cookieCheck.setAttribute('type', 'checkbox');
+        cookieCheck.required = true;
         loginForm.appendChild(cookieCheck);
 
         var loginButton = document.createElement('button');
