@@ -178,7 +178,7 @@ async function verifyLogin(schoolUrl, username, password) {
 
     async function getToken() {
         try {
-            const url = schoolUrl + 'api/login';
+            var url = schoolUrl + 'api/login';
             
             const body = new URLSearchParams();
             body.append('client_id', 'ANDR');
