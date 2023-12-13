@@ -194,10 +194,12 @@ async function verifyLogin(schoolUrl, username, password) {
             if (response.ok) {
                 const responseBody = await response.text();
                 const responseArray = responseBody.split('"');
+                console.log(responseArray[7]);
                 return responseArray[7];
             }
         }
         catch {
+            console.log("unable to get token");
             return;
         }
     }
