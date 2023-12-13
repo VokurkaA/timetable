@@ -138,7 +138,7 @@ async function selectCity(username, password) {
     });
     schoolDropDown.addEventListener("change", async function () {
         if (schoolDropDown.options[schoolDropDown.selectedIndex].value != "")
-            userData = verifyLogin(schoolDropDown.options[schoolDropDown.selectedIndex].value, username, password);
+            userData = await verifyLogin(schoolDropDown.options[schoolDropDown.selectedIndex].value, username, password);
     })
 }
 
@@ -214,10 +214,17 @@ function confirmLogin(userData, username, password, schoolUrl) {
     loginForm.appendChild(loginText);
     var isSuccessfull;
 
-    if (userData == null)
+    if (userData.UserUID == undefined)
         isSuccessfull = false;
 
-    if (isSuccessfull) {
+        console.log(userData);
+        console.log(isSuccessfull);
+        console.log(userData.UserUID);
+
+    try{
+        if  (userData.UserUID == null)
+            throw new console.error();
+
         var text1 = document.createElement('p');
         text1.textContent = "Is this you?";
         text1.style.textAlign = 'left'
@@ -256,7 +263,7 @@ function confirmLogin(userData, username, password, schoolUrl) {
             }
         }
     }
-    else {
+    catch {
         var text1 = document.createElement('p');
         text1.textContent = "error: profile not found";
         text1.style.textAlign = 'left'
