@@ -1,0 +1,131 @@
+body {
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    /*background: linear-gradient(to top, #09203f 0%, #537895 100%);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.content-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: grid;
+    gap: 0.5vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vw;
+    padding: 0.5vw;
+}
+
+.subject {
+    font-size: 100%;
+    width: 3vw;
+    height: 3vw;
+    line-height: 3vw;
+    border-radius: 0.5vw;
+    cursor: default;
+}
+
+.subject:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.label {
+    display: flex;
+    left: 0%;
+    height: 2vw;
+    margin-left: 3vw;
+    margin-bottom: 0.5vw;
+    margin-top: 2vw;
+}
+
+.input {
+    width: 80%;
+    height: 2.5vw;
+    left: 50%;
+    border-radius: 0.5vw;
+    font-size: 0.8vw;
+    padding-left: 0.7vw;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 29px 0px;
+}
+
+.DdMenu {
+    width: 80%;
+    height: 2.5vw;
+    left: 50%;
+    border: black 1px solid;
+    border-radius: 0.5vw;
+}
+
+.submitButton {
+    width: 80%;
+    height: 2.5vw;
+    left: 50%;
+    border: none;
+    border-radius: 0.75vw;
+    background: linear-gradient(to right, #514A9D, #24C6DC);
+    margin-top: 3vw;
+    color: #FFFFFF;
+    font-size: 1vw;
+    display: inline-block;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: none;
+    border: none;
+    fill: #FFFFFF;
+    position: absolute;
+    right: 3%;
+    top: 5%;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+}
+
+.login-btn:focus {
+    outline: none;
+}
+
+.login-btn:hover {
+    scale: 90%;
+}
+
+.loginForm {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30vw;
+    width: 25vw;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 2vw;
+}
+
+input:focus {
+    outline: none
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    z-index: 9;
+}
