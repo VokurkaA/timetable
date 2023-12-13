@@ -115,7 +115,7 @@ async function selectCity(username, password) {
     submitButton.onclick = function () {
         if (cityDropDown.value != "" && schoolDropDown.value != "") {
             schoolUrl = loginForm.children[4].options[loginForm.children[4].selectedIndex].value;
-            confirmLogin(userData, password, schoolUrl);
+            confirmLogin(userData, username, password, schoolUrl);
         }
     };
     submitButton.textContent = 'Next';
@@ -194,12 +194,10 @@ async function verifyLogin(schoolUrl, username, password) {
             if (response.ok) {
                 const responseBody = await response.text();
                 const responseArray = responseBody.split('"');
-                console.log(responseArray[7]);
                 return responseArray[7];
             }
         }
         catch {
-            console.log("unable to get token");
             return;
         }
     }
