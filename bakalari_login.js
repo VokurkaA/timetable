@@ -2,16 +2,14 @@ var overlay = document.createElement('div');
 overlay.classList.add('overlay');
 
 if (document.cookie == null) {
-    console.log(true);
     createLoginForm();
 }
 else {
-    console.log(false);
     creteForLoginForm();
 }
-console.log("end");
 
 async function creteForLoginForm() {
+    console.log("in");
     var cookies = document.cookie;
     cookies = cookies.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -19,6 +17,7 @@ async function creteForLoginForm() {
         cookies[i] = cookie[1].trim();
     }
     const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
+    console.log(userData);
 
     var loginForm = document.createElement('div');
     loginForm.classList.add('loginForm');
