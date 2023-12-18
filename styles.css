@@ -1,8 +1,7 @@
 body {
-    background: #24C6DC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #24C6DC;
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+    background: linear-gradient(to right, #514A9D, #24C6DC);
 
     /*background: linear-gradient(to top, #09203f 0%, #537895 100%);*/
     background-repeat: no-repeat;
@@ -100,7 +99,7 @@ body {
 }
 
 .login-btn:hover {
-    scale: 90%;
+    scale: 110%;
 }
 
 .loginForm {
@@ -130,6 +129,19 @@ input:focus {
     z-index: 9;
 }
 
-.cookieBox{
+.cookieBox {
     margin-top: 10vw;
+
+}
+
+#container {
+}
+
+.bgType {
+    height: 10vw;
+    width: 15vw;
+    display: inline-block;
+    border-radius: 2vw;
+    margin: 1.5vw;
+    border: none;
 }
