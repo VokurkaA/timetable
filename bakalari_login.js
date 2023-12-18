@@ -44,6 +44,8 @@ async function creteForLoginForm() {
     var backButton = document.createElement('button');
     backButton.classList.add('submitButton');
     backButton.textContent = 'Back';
+    backButton.style.width = '39%';
+    backButton.style.float = 'left';
     loginForm.appendChild(backButton);
 
     backButton.onclick = function () {
@@ -53,6 +55,8 @@ async function creteForLoginForm() {
     var logOutButton = document.createElement('button');
     logOutButton.classList.add('submitButton');
     logOutButton.textContent = 'Log out';
+    logOutButton.style.width = '39%';
+    logOutButton.style.float = 'right';
     loginForm.appendChild(logOutButton);
 
     logOutButton.onclick = function () {
