@@ -9,7 +9,12 @@ else {
 }
 
 async function creteForLoginForm() {
-    console.log("in");
+    document.body.insertBefore(overlay, document.body.firstChild);
+
+    var loginForm = document.createElement('div');
+    loginForm.classList.add('loginForm');
+    overlay.appendChild(loginForm);
+
     var cookies = document.cookie;
     cookies = cookies.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -17,13 +22,6 @@ async function creteForLoginForm() {
         cookies[i] = cookie[1].trim();
     }
     const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
-    console.log(userData);
-
-    document.body.insertBefore(overlay, document.body.firstChild);
-
-    var loginForm = document.createElement('div');
-    loginForm.classList.add('loginForm');
-    overlay.appendChild(loginForm);
 
     var name = document.createElement('p');
     name.textContent = userData.FullUserName;
