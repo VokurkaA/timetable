@@ -11,7 +11,14 @@ async function creteForLoginForm(){
     loginForm.classList.add('loginForm');
     overlay.appendChild(loginForm);
 
-    const userData = await verifyLogin();
+    var cookies = document.cookie;
+    cookies = cookies.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        cookie = cookies[i].split('=');
+        cookies[i] = cookie[1].trim();
+    }
+
+    const userData = await verifyLogin(cookie[2], cookie[0], cookie[1]);
     console.log(userData);
 }
 
