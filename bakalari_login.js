@@ -6,20 +6,57 @@ if (document.cookie == null)
 else
     creteForLoginForm();
 
-async function creteForLoginForm(){
-    var loginForm = document.createElement('div');
-    loginForm.classList.add('loginForm');
-    overlay.appendChild(loginForm);
-
+async function creteForLoginForm() {
     var cookies = document.cookie;
     cookies = cookies.split(';');
     for (let i = 0; i < cookies.length; i++) {
         cookie = cookies[i].split('=');
         cookies[i] = cookie[1].trim();
     }
-
     const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
-    console.log(userData);
+
+    var loginForm = document.createElement('div');
+    loginForm.classList.add('loginForm');
+    overlay.appendChild(loginForm);
+
+    var name = document.createElement('p');
+    name.textContent = userData.FullUserName;
+    loginForm.appendChild(name);
+
+    var studyType = document.createElement('p');
+    studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
+    loginForm.appendChild(studyType);
+
+    var cookieLbl = document.createElement('label');
+    cookieLbl.textContent = 'How we use ';
+    loginForm.appendChild(cookieLbl);
+
+    var cookiesLink = document.createElement('a');
+    cookiesLink.href = 'clarification.html';
+    cookiesLink.textContent = 'cookies';
+    cookiesLink.target = '_blank';
+    cookieLbl.appendChild(cookiesLink);
+
+    var backButton = document.createElement('button');
+    backButton.classList.add('submitButton');
+    backButton.textContent = 'Back';
+    loginForm.appendChild(backButton);
+
+    backButton.onclick = function () {
+        closeLoginForm();
+    }
+
+    var logOutButton = document.createElement('button');
+    logOutButton.classList.add('submitButton');
+    logOutButton.textContent = 'Log out';
+    loginForm.appendChild(logOutButton);
+
+    logOutButton.onclick = function(){
+        if (confirm("Do you really want to log out?") == true){
+            removeAllCookies();
+            location.reload();
+        }
+    }
 }
 
 function createLoginForm() {
@@ -231,9 +268,6 @@ function confirmLogin(userData, username, password, schoolUrl) {
     loginText.style.margin = '2vw';
     loginText.style.color = '#387aa5';
     loginForm.appendChild(loginText);
-
-    if (userData.UserUID == undefined)
-        isSuccessfull = false;
 
     try {
         if (userData.UserUID == null)
