@@ -31,7 +31,7 @@ async function creteForLoginForm() {
     studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
     loginForm.appendChild(studyType);
 
-    var cookieLbl = document.createElement('label');
+    var cookieLbl = document.createElement('p');
     cookieLbl.textContent = 'How we use ';
     loginForm.appendChild(cookieLbl);
 
@@ -40,6 +40,11 @@ async function creteForLoginForm() {
     cookiesLink.textContent = 'cookies';
     cookiesLink.target = '_blank';
     cookieLbl.appendChild(cookiesLink);
+
+    var changeBgButton = document.createElement('a');
+    changeBgButton.textContent = 'Change background';
+    changeBgButton.href = 'changeBackground.html';
+    loginForm.appendChild(changeBgButton);
 
     var backButton = document.createElement('button');
     backButton.classList.add('submitButton');
