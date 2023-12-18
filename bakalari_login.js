@@ -1,7 +1,19 @@
 var overlay = document.createElement('div');
 overlay.classList.add('overlay');
 
-createLoginForm();
+if (document.cookie == null)
+    createLoginForm();
+else
+    creteForLoginForm();
+
+creteForLoginForm(){
+    var loginForm = document.createElement('div');
+    loginForm.classList.add('loginForm');
+    overlay.appendChild(loginForm);
+
+    const userData = await verifyLogin();
+    console.log(userData);
+}
 
 function createLoginForm() {
     var loginForm = document.createElement('div');
@@ -212,7 +224,6 @@ function confirmLogin(userData, username, password, schoolUrl) {
     loginText.style.margin = '2vw';
     loginText.style.color = '#387aa5';
     loginForm.appendChild(loginText);
-    var isSuccessfull;
 
     if (userData.UserUID == undefined)
         isSuccessfull = false;
