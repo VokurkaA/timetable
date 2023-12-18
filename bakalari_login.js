@@ -1,11 +1,15 @@
 var overlay = document.createElement('div');
 overlay.classList.add('overlay');
 
-console.log("now"); 
-if (document.cookie == null)
+if (document.cookie == null) {
+    console.log(true);
     createLoginForm();
-else
+}
+else {
+    console.log(false);
     creteForLoginForm();
+}
+console.log("end");
 
 async function creteForLoginForm() {
     var cookies = document.cookie;
@@ -52,8 +56,8 @@ async function creteForLoginForm() {
     logOutButton.textContent = 'Log out';
     loginForm.appendChild(logOutButton);
 
-    logOutButton.onclick = function(){
-        if (confirm("Do you really want to log out?") == true){
+    logOutButton.onclick = function () {
+        if (confirm("Do you really want to log out?") == true) {
             removeAllCookies();
             location.reload();
         }
