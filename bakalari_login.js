@@ -18,7 +18,7 @@ async function creteForLoginForm(){
         cookies[i] = cookie[1].trim();
     }
 
-    const userData = await verifyLogin(cookie[2], cookie[0], cookie[1]);
+    const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
     console.log(userData);
 }
 
