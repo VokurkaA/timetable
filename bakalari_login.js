@@ -6,7 +6,7 @@ if (document.cookie == null)
 else
     creteForLoginForm();
 
-creteForLoginForm(){
+async function creteForLoginForm(){
     var loginForm = document.createElement('div');
     loginForm.classList.add('loginForm');
     overlay.appendChild(loginForm);
