@@ -1,6 +1,5 @@
 var overlay = document.createElement('div');
 overlay.classList.add('overlay');
-body.appendChild(overlay);
 
 if (document.cookie == null) {
     createLoginForm();
@@ -19,6 +18,8 @@ async function creteForLoginForm() {
     }
     const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
     console.log(userData);
+
+    document.body.insertBefore(overlay, document.body.firstChild);
 
     var loginForm = document.createElement('div');
     loginForm.classList.add('loginForm');
