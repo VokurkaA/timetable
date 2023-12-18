@@ -1,7 +1,7 @@
 var overlay = document.createElement('div');
 overlay.classList.add('overlay');
 
-if (document.cookie == null) {
+if (document.cookie == undefined) {
     createLoginForm();
 }
 else {
