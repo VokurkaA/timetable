@@ -1,5 +1,6 @@
 var overlay = document.createElement('div');
 overlay.classList.add('overlay');
+body.appendChild(overlay);
 
 if (document.cookie == null) {
     createLoginForm();
