@@ -73,9 +73,9 @@ async function creteForLoginForm() {
     backButton.classList.add('submitButton');
     backButton.textContent = 'Back';
     backButton.style.width = '39%';
-    backButton.style.float = 'left';
     backButton.style.position = 'fixed';
     backButton.style.bottom = '0';
+    backButton.style.left = '0';
     backButton.style.marginBottom = '2vw';
     loginForm.appendChild(backButton);
 
@@ -87,9 +87,9 @@ async function creteForLoginForm() {
     logOutButton.classList.add('submitButton');
     logOutButton.textContent = 'Log out';
     logOutButton.style.width = '39%';
-    logOutButton.style.float = 'right';
     logOutButton.style.position = 'fixed';
     logOutButton.style.bottom = '0';
+    logOutButton.style.right = '0';
     logOutButton.style.marginBottom = '2vw';
     loginForm.appendChild(logOutButton);
 
