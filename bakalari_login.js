@@ -22,7 +22,7 @@ async function creteForLoginForm() {
     loginForm.appendChild(helloText);
 
     var userWrapper = document.createElement('div');
-    userWrapper.marginTop = '3vw';
+    userWrapper.style.paddingTop = '3vw';
     loginForm.appendChild(userWrapper);
 
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -71,6 +71,8 @@ async function creteForLoginForm() {
     changeBgBox.style.width = '15vw';
     changeBgBox.style.height = '5vw';
     changeBgBox.style.backgroundImage = ('linear-gradient(to right, #514A9D, #24C6DC)');
+    changeBgBox.style.border = 'none';
+    changeBgBox.style.cursor = 'pointer';
     loginForm.appendChild(changeBgBox);
 
     changeBgBox.onclick = function(){
