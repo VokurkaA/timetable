@@ -15,6 +15,10 @@ async function creteForLoginForm() {
     loginForm.classList.add('loginForm');
     overlay.appendChild(loginForm);
 
+    var helloText = document.createElement('h1');
+    helloText.textContent = 'Hello';
+    helloText.appendChild(loginForm);
+
     var cookies = document.cookie;
     cookies = cookies.split(';');
     for (let i = 0; i < cookies.length; i++) {

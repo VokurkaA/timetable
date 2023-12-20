@@ -134,8 +134,7 @@ input:focus {
 
 }
 
-#container {
-}
+#container {}
 
 .bgType {
     height: 10vw;
@@ -144,4 +143,11 @@ input:focus {
     border-radius: 2vw;
     margin: 1.5vw;
     border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#homeBtn {
+    border: 1px solid black;
+    margin-left: 6vw;
+    margin-right: 6vw;
 }
