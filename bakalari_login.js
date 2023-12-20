@@ -77,7 +77,7 @@ async function creteForLoginForm() {
     backButton.style.position = 'fixed';
     backButton.style.bottom = '0';
     backButton.style.left = '0';
-    backButton.style.marginBottom = '2vw';
+    backButton.style.margin = '1.5vw'
     loginForm.appendChild(backButton);
 
     backButton.onclick = function () {
@@ -91,7 +91,7 @@ async function creteForLoginForm() {
     logOutButton.style.position = 'fixed';
     logOutButton.style.bottom = '0';
     logOutButton.style.right = '0';
-    logOutButton.style.marginBottom = '2vw';
+    logOutButton.style.margin = '1.5vw';
     loginForm.appendChild(logOutButton);
 
     logOutButton.onclick = function () {
