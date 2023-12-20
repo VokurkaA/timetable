@@ -71,6 +71,7 @@ async function creteForLoginForm() {
     changeBgBox.style.width = '15vw';
     changeBgBox.style.height = '5vw';
     changeBgBox.style.backgroundImage = ('linear-gradient(to right, #514A9D, #24C6DC)');
+    loginForm.appendChild(changeBgBox);
 
     changeBgBox.onclick = function(){
         document.location.href = 'changeBackground.html';
