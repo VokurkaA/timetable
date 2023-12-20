@@ -22,7 +22,7 @@ async function creteForLoginForm() {
     loginForm.appendChild(helloText);
 
     var userWrapper = document.createElement('div');
-    userWrapper.style.border = '1px solid black'
+    userWrapper.marginTop = '3vw';
     loginForm.appendChild(userWrapper);
 
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -57,6 +57,8 @@ async function creteForLoginForm() {
 
     var cookieLbl = document.createElement('p');
     cookieLbl.textContent = 'How we use ';
+    cookieLbl.style.display = 'block';
+    cookieLbl.style.textAlign = 'left';
     userWrapper.appendChild(cookieLbl);
 
     var cookiesLink = document.createElement('a');
@@ -65,10 +67,14 @@ async function creteForLoginForm() {
     cookiesLink.target = '_blank';
     cookieLbl.appendChild(cookiesLink);
 
-    var changeBgButton = document.createElement('a');
-    changeBgButton.textContent = 'Change background';
-    changeBgButton.href = 'changeBackground.html';
-    userWrapper.appendChild(changeBgButton);
+    var changeBgBox = document.createElement('button');
+    changeBgBox.style.width = '15vw';
+    changeBgBox.style.height = '5vw';
+    changeBgBox.style.backgroundImage = ('linear-gradient(to right, #514A9D, #24C6DC)');
+
+    changeBgBox.onclick = function(){
+        document.location.href = 'changeBackground.html';
+    }
 
     var backButton = document.createElement('button');
     backButton.classList.add('submitButton');
