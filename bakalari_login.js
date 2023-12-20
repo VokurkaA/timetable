@@ -77,7 +77,7 @@ async function creteForLoginForm() {
     backButton.style.position = 'fixed';
     backButton.style.bottom = '0';
     backButton.style.left = '0';
-    backButton.style.margin = '1.5vw'
+    backButton.style.margin = '3vw 0 2vw 1.5vw'
     loginForm.appendChild(backButton);
 
     backButton.onclick = function () {
@@ -91,7 +91,7 @@ async function creteForLoginForm() {
     logOutButton.style.position = 'fixed';
     logOutButton.style.bottom = '0';
     logOutButton.style.right = '0';
-    logOutButton.style.margin = '1.5vw';
+    logOutButton.style.margin = '3vw 0 2vw 1.5vw';
     loginForm.appendChild(logOutButton);
 
     logOutButton.onclick = function () {
@@ -449,4 +449,4 @@ function setCookie(name, value) {
     expires = "; expires=" + date.toUTCString();
 
     document.cookie = name + "=" + value + expires + "; path=/";
-}
+}   
