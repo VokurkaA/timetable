@@ -15,9 +15,27 @@ async function creteForLoginForm() {
     loginForm.classList.add('loginForm');
     overlay.appendChild(loginForm);
 
-    var helloText = document.createElement('h1');
+    var helloText = document.createElement('p');
+    helloText.style.scale = '3';
+    helloText.style.marginTop = '2vw';
     helloText.textContent = 'Hello';
-    helloText.appendChild(loginForm);
+    loginForm.appendChild(helloText);
+
+    var userWrapper = document.createElement('div');
+    userWrapper.style.border = '1px solid black'
+    loginForm.appendChild(userWrapper);
+
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("viewBox", "0 -960 960 960");
+    svg.setAttribute("height", "4vw");
+    svg.style.float = 'left';
+    svg.style.margin = '2vw';
+
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z");
+    svg.appendChild(path);
+    userWrapper.appendChild(svg);
 
     var cookies = document.cookie;
     cookies = cookies.split(';');
@@ -29,15 +47,15 @@ async function creteForLoginForm() {
 
     var name = document.createElement('p');
     name.textContent = userData.FullUserName;
-    loginForm.appendChild(name);
+    userWrapper.appendChild(name);
 
     var studyType = document.createElement('p');
     studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
-    loginForm.appendChild(studyType);
+    userWrapper.appendChild(studyType);
 
     var cookieLbl = document.createElement('p');
     cookieLbl.textContent = 'How we use ';
-    loginForm.appendChild(cookieLbl);
+    userWrapper.appendChild(cookieLbl);
 
     var cookiesLink = document.createElement('a');
     cookiesLink.href = 'clarification.html';
@@ -48,7 +66,7 @@ async function creteForLoginForm() {
     var changeBgButton = document.createElement('a');
     changeBgButton.textContent = 'Change background';
     changeBgButton.href = 'changeBackground.html';
-    loginForm.appendChild(changeBgButton);
+    userWrapper.appendChild(changeBgButton);
 
     var backButton = document.createElement('button');
     backButton.classList.add('submitButton');
@@ -58,7 +76,7 @@ async function creteForLoginForm() {
     backButton.style.position = 'fixed';
     backButton.style.bottom = '0';
     backButton.style.marginBottom = '2vw';
-    loginForm.appendChild(backButton);
+    userWrapper.appendChild(backButton);
 
     backButton.onclick = function () {
         closeLoginForm();
@@ -72,7 +90,7 @@ async function creteForLoginForm() {
     logOutButton.style.position = 'fixed';
     logOutButton.style.bottom = '0';
     logOutButton.style.marginBottom = '2vw';
-    loginForm.appendChild(logOutButton);
+    userWrapper.appendChild(logOutButton);
 
     logOutButton.onclick = function () {
         if (confirm("Do you really want to log out?") == true) {
