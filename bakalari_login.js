@@ -15,27 +15,21 @@ async function creteForLoginForm() {
     loginForm.classList.add('loginForm');
     overlay.appendChild(loginForm);
 
-    var helloText = document.createElement('p');
-    helloText.style.scale = '3';
-    helloText.style.marginTop = '2vw';
-    helloText.textContent = 'Hello';
+    var helloText = document.createElement('h1');
+    helloText.textContent = "Hello";
     loginForm.appendChild(helloText);
-
-    var userWrapper = document.createElement('div');
-    userWrapper.style.paddingTop = '3vw';
-    loginForm.appendChild(userWrapper);
 
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("viewBox", "0 -960 960 960");
     svg.setAttribute("height", "4vw");
-    svg.style.float = 'left';
-    svg.style.margin = '2vw';
+    svg.style.display = 'inline-block';
+    svg.style.padding = '3.5vw 2vw 0vw 2vw';
 
     var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z");
     svg.appendChild(path);
-    userWrapper.appendChild(svg);
+    loginForm.appendChild(svg);
 
     var cookies = document.cookie;
     cookies = cookies.split(';');
@@ -45,21 +39,24 @@ async function creteForLoginForm() {
     }
     const userData = await verifyLogin(cookies[2], cookies[0], cookies[1]);
 
+    var userWrapper = document.createElement('div');
+    userWrapper.style.display = 'inline-block';
+    userWrapper.style.verticalAlign = '2vw';
+    loginForm.appendChild(userWrapper);
+
     var name = document.createElement('p');
     name.textContent = userData.FullUserName;
-    name.textAlign = 'left';
+    name.style.margin = '0px';
     userWrapper.appendChild(name);
 
     var studyType = document.createElement('p');
     studyType.textContent = userData.UserTypeText + ", " + userData.Class.Abbrev;
-    studyType.textAlign = 'left';
+    studyType.style.margin = '0px';
     userWrapper.appendChild(studyType);
 
     var cookieLbl = document.createElement('p');
     cookieLbl.textContent = 'How we use ';
-    cookieLbl.style.display = 'block';
-    cookieLbl.style.textAlign = 'left';
-    userWrapper.appendChild(cookieLbl);
+    loginForm.appendChild(cookieLbl);
 
     var cookiesLink = document.createElement('a');
     cookiesLink.href = 'clarification.html';
@@ -68,8 +65,8 @@ async function creteForLoginForm() {
     cookieLbl.appendChild(cookiesLink);
 
     var changeBgBox = document.createElement('button');
-    changeBgBox.style.width = '15vw';
-    changeBgBox.style.height = '5vw';
+    changeBgBox.style.width = '80%';
+    changeBgBox.style.height = '15%';
     changeBgBox.style.backgroundImage = ('linear-gradient(to right, #514A9D, #24C6DC)');
     changeBgBox.style.border = 'none';
     changeBgBox.style.cursor = 'pointer';
@@ -81,7 +78,7 @@ async function creteForLoginForm() {
         document.location.href = 'changeBackground.html';
     }
 
-    var editbgsvg = document.createElement('svg');
+    /*var editbgsvg = document.createElement('svg');
     editbgsvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     editbgsvg.setAttribute("viewBox", "0 -960 960 960");
     editbgsvg.setAttribute("height", "1vw");
@@ -89,17 +86,19 @@ async function creteForLoginForm() {
 
     var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z");
-    editbgsvg.appendChild(path);
-    changeBgBox.appendChild(editbgsvg);
+    editbgsvg.appendChild(p ath);
+
+    changeBgBox.appendChild(editbgsvg);*/
+
+    var bottomWrapper = document.createElement('div');
+    bottomWrapper.style.margin = 'auto';
+    bottomWrapper.style.marginTop = '35%';
+    bottomWrapper.style.textAlign = 'center';
+    loginForm.appendChild(bottomWrapper);
 
     var backButton = document.createElement('button');
-    backButton.classList.add('submitButton');
+    backButton.classList.add('bottomBtn');
     backButton.textContent = 'Back';
-    backButton.style.width = '39%';
-    backButton.style.position = 'fixed';
-    backButton.style.bottom = '0';
-    backButton.style.left = '0';
-    backButton.style.margin = '3vw 0 2vw 1.5vw'
     loginForm.appendChild(backButton);
 
     backButton.onclick = function () {
@@ -107,13 +106,8 @@ async function creteForLoginForm() {
     }
 
     var logOutButton = document.createElement('button');
-    logOutButton.classList.add('submitButton');
+    logOutButton.classList.add('bottomBtn');
     logOutButton.textContent = 'Log out';
-    logOutButton.style.width = '39%';
-    logOutButton.style.position = 'fixed';
-    logOutButton.style.bottom = '0';
-    logOutButton.style.right = '0';
-    logOutButton.style.margin = '3vw 0 2vw 1.5vw';
     loginForm.appendChild(logOutButton);
 
     logOutButton.onclick = function () {
