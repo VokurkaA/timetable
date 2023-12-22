@@ -72,7 +72,6 @@ async function creteForLoginForm() {
     changeBgBox.style.cursor = 'pointer';
     changeBgBox.style.borderRadius = '2vw';
     changeBgBox.style.margin = 'auto';
-    loginForm.appendChild(changeBgBox);
 
     changeBgBox.onclick = function () {
         document.location.href = 'changeBackground.html';
@@ -82,6 +81,7 @@ async function creteForLoginForm() {
     editbgsvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     editbgsvg.setAttribute("viewBox", "0 -960 960 960");
     editbgsvg.setAttribute("height", "3vw");
+    editbgsvg.setAttribute("width", "24");
     editbgsvg.style.margin = 'auto';
     editbgsvg.style.display = 'block';
     editbgsvg.style.height = '-webkit-fill-available';
@@ -91,6 +91,8 @@ async function creteForLoginForm() {
     editbgsvg.appendChild(path);
 
     changeBgBox.appendChild(editbgsvg);
+
+    loginForm.appendChild(changeBgBox);
 
     var bottomWrapper = document.createElement('div');
     bottomWrapper.style.margin = 'auto';
