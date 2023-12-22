@@ -80,7 +80,7 @@ async function creteForLoginForm() {
     var editbgsvg = document.createElement('svg');
     editbgsvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     editbgsvg.setAttribute("viewBox", "0 -960 960 960");
-    editbgsvg.setAttribute("height", "3vw");
+    editbgsvg.setAttribute("height", "24");
     editbgsvg.setAttribute("width", "24");
     editbgsvg.style.margin = 'auto';
     editbgsvg.style.display = 'block';
