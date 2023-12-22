@@ -1,8 +1,6 @@
 function changeBackground(specification){
-    console.log(window.getComputedStyle(document.body).backgroundImage);
     document.body.style.background = specification;
     setCookie("background", specification);
-    console.log("cookie changed, set to " + specification);
 }
 
 function setCookie(name, value) {

@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 function checkBackground() {
     var cookies = document.cookie;
-    if (cookies.length == 3){
+    cookies = cookies.split("; ");
+    if (cookies.length == 4){
         document.body.style.background = cookies[3];
     }
 }
