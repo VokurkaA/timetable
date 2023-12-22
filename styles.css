@@ -152,7 +152,8 @@ input:focus {
 
 .bottomBtn {
     width: 45%;
-    height: 50px;
+    height: 10%;
+    color: #FFFFFF;
     border: none;
     display: inline-block;
     margin: 1%;
