@@ -70,7 +70,7 @@ async function creteForLoginForm() {
     changeBgBox.style.backgroundImage = ('linear-gradient(to right, #514A9D, #24C6DC)');
     changeBgBox.style.border = 'none';
     changeBgBox.style.cursor = 'pointer';
-    changeBgBox.style.borderRadius = '1vw';
+    changeBgBox.style.borderRadius = '2vw';
     changeBgBox.margin = 'auto';
     loginForm.appendChild(changeBgBox);
 
