@@ -71,7 +71,7 @@ async function creteForLoginForm() {
     changeBgBox.style.border = 'none';
     changeBgBox.style.cursor = 'pointer';
     changeBgBox.style.borderRadius = '2vw';
-    changeBgBox.margin = 'auto';
+    changeBgBox.style.margin = 'auto';
     loginForm.appendChild(changeBgBox);
 
     changeBgBox.onclick = function () {
