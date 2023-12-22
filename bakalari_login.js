@@ -71,17 +71,17 @@ async function creteForLoginForm() {
     changeBgBox.style.border = 'none';
     changeBgBox.style.cursor = 'pointer';
     changeBgBox.style.borderRadius = '1vw';
-    changeBgBox.margin = '0.5vw';
+    changeBgBox.margin = 'auto';
     loginForm.appendChild(changeBgBox);
 
-    changeBgBox.onclick = function(){
+    changeBgBox.onclick = function () {
         document.location.href = 'changeBackground.html';
     }
 
     var editbgsvg = document.createElement('svg');
     editbgsvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     editbgsvg.setAttribute("viewBox", "0 -960 960 960");
-    editbgsvg.setAttribute("height", "2vw");
+    editbgsvg.setAttribute("height", "3vw");
     editbgsvg.style.margin = 'auto';
     editbgsvg.style.display = 'block';
     editbgsvg.style.height = '-webkit-fill-available';
