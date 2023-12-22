@@ -100,6 +100,7 @@ async function creteForLoginForm() {
 
     var backButton = document.createElement('button');
     backButton.classList.add('bottomBtn');
+    backButton.style.backgroundColor = '#add8e6';
     backButton.textContent = 'Back';
     loginForm.appendChild(backButton);
 
@@ -109,6 +110,7 @@ async function creteForLoginForm() {
 
     var logOutButton = document.createElement('button');
     logOutButton.classList.add('bottomBtn');
+    logOutButton.style.backgroundColor = '#ff0000';
     logOutButton.textContent = 'Log out';
     loginForm.appendChild(logOutButton);
 
