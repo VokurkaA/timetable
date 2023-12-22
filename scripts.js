@@ -1,8 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+    checkBackground();
     printDate();
     printLogin();
     printTimeTable();
 });
+function checkBackground() {
+    var cookies = document.cookie;
+    if (cookies.length == 3){
+        document.body.style.background = cookies[3];
+    }
+}
 function printLogin() {
     var button = document.createElement("button");
     button.onclick = function () {
